@@ -87,18 +87,18 @@ const HotCollections = () => {
               <Skeleton
                 height={"60px"}
                 width={"60px"}
-                borderRadius={"50%"}
+                borderRadius={"999px"}
                 />
               <i className="fa fa-check"></i>
             </div>
             <div className="nft_coll_info">
               <Skeleton
                 height={"20px"}
-                width={"150px"}
+                width={"100px"}
                 borderRadius={"8px"}
                 />
             </div>
-            <Skeleton height={"20px"} width={"80px"} borderRadius={"8px"} />
+            <Skeleton height={"20px"} width={"50px"} borderRadius={"8px"} />
           </div>
           </OwlCarousel>
           )}
