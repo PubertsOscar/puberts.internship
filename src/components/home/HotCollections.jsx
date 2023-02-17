@@ -11,7 +11,6 @@ const HotCollections = () => {
       "https://us-central1-nft-cloud-functions.cloudfunctions.net/hotCollections"
     );
     setAuthor(data);
-    console.log(data);
   }
   useEffect(() => {
     fetchHotCollections();
@@ -46,9 +45,9 @@ const HotCollections = () => {
               {author.length && (
                 <OwlCarousel className="owl.theme" {...options}>
                   {author.map((auth) => (
-                    <div className="nft_coll">
+                    <div className="nft_coll" key={auth.id}>
                       <div className="nft_wrap">
-                        <Link to="/item-details">
+                        <Link to={`/item-details/${auth.nftId}`}>
                           <img
                             src={auth?.nftImage}
                             className="lazy img-fluid"
@@ -57,7 +56,7 @@ const HotCollections = () => {
                         </Link>
                       </div>
                       <div className="nft_coll_pp">
-                        <Link to="/author">
+                        <Link to={"/author"}>
                           <img
                             className="lazy pp-coll"
                             src={auth?.authorImage}
@@ -79,28 +78,28 @@ const HotCollections = () => {
             </>
           ) : (
             <OwlCarousel className="owl-theme" {...options}>
-            <div className="nft_coll">
-            <div className="nft_wrap">
-              <Skeleton height={"100%"} width={"100%"} />
-            </div>
-            <div className="nft_coll_pp">
-              <Skeleton
-                height={"60px"}
-                width={"60px"}
-                borderRadius={"50%"}
-                />
-              <i className="fa fa-check"></i>
-            </div>
-            <div className="nft_coll_info">
-              <Skeleton
-                height={"20px"}
-                width={"150px"}
-                borderRadius={"8px"}
-                />
-            </div>
-            <Skeleton height={"20px"} width={"80px"} borderRadius={"8px"} />
-          </div>
-          </OwlCarousel>
+              <div className="nft_coll">
+                <div className="nft_wrap">
+                  <Skeleton height={"100%"} width={"100%"} />
+                </div>
+                <div className="nft_coll_pp">
+                  <Skeleton
+                    height={"60px"}
+                    width={"60px"}
+                    borderRadius={"50%"}
+                  />
+                  <i className="fa fa-check"></i>
+                </div>
+                <div className="nft_coll_info">
+                  <Skeleton
+                    height={"20px"}
+                    width={"150px"}
+                    borderRadius={"8px"}
+                  />
+                </div>
+                <Skeleton height={"20px"} width={"80px"} borderRadius={"8px"} />
+              </div>
+            </OwlCarousel>
           )}
         </div>
       </div>
