@@ -26,7 +26,6 @@ const TopSellers = () => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-
           <div className="col-md-12">
             <ol className="author_list">
               {sellers.length ? (
@@ -51,20 +50,22 @@ const TopSellers = () => {
                   ))}
                 </>
               ) : (
-                new Array(12).fill(0).map((_,index)=>(
-                <li>
-                  <div className="author_list_pp">
-                    <Skeleton
-                      height={"50px"}
-                      width={"50px"}
-                      borderRadius={"50%"}
-                    />
-                  </div>
-                  <div className="author_list_info">
-                    <Skeleton height={"20px"} width={"105px"} />
-                   <span><Skeleton height={"20px"} width={"50px"} /></span> 
-                  </div>
-                </li>
+                new Array(12).fill(0).map((_, index) => (
+                  <li>
+                    <div className="author_list_pp">
+                      <Skeleton
+                        height={"50px"}
+                        width={"50px"}
+                        borderRadius={"50%"}
+                      />
+                    </div>
+                    <div className="author_list_info">
+                      <Skeleton height={"20px"} width={"105px"} />
+                      <span>
+                        <Skeleton height={"20px"} width={"50px"} />
+                      </span>
+                    </div>
+                  </li>
                 ))
               )}
             </ol>
