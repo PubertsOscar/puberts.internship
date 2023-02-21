@@ -27,7 +27,8 @@ const TopSellers = () => {
             </div>
           </div>
 
-          <div className="col-md-12">
+          <div className="col-md-12" data-aos="fade-in"
+     data-aos-duration="1500">
             <ol className="author_list">
               {sellers.length ? (
                 <>
