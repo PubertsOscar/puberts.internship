@@ -30,7 +30,12 @@ const NewItems = () => {
     },
   };
   return (
-    <section id="section-items" className="no-bottom">
+    <section
+      id="section-items"
+      className="no-bottom"
+      data-aos="fade-in"
+      data-aos-duration="500"
+    >
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
@@ -56,9 +61,7 @@ const NewItems = () => {
                           <i className="fa fa-check"></i>
                         </Link>
                       </div>
-                      {item.expiryDate && (
-                        <ExpiryDateCountDown item={item} />
-                      )}
+                      {item.expiryDate && <ExpiryDateCountDown item={item} />}
                       <div className="nft__item_wrap">
                         <div className="nft__item_extra">
                           <div className="nft__item_buttons">
