@@ -44,27 +44,31 @@ const TopSellers = () => {
                         </Link>
                       </div>
                       <div className="author_list_info">
-                        <Link to="/author">{seller.authorName}</Link>
+                        <Link to={`/author/${seller.authorId}`}>
+                          {seller.authorName}
+                        </Link>
                         <span>{seller.price} ETH</span>
                       </div>
                     </li>
                   ))}
                 </>
               ) : (
-                new Array(12).fill(0).map((_,index)=>(
-                <li>
-                  <div className="author_list_pp">
-                    <Skeleton
-                      height={"50px"}
-                      width={"50px"}
-                      borderRadius={"50%"}
-                    />
-                  </div>
-                  <div className="author_list_info">
-                    <Skeleton height={"20px"} width={"105px"} />
-                   <span><Skeleton height={"20px"} width={"50px"} /></span> 
-                  </div>
-                </li>
+                new Array(12).fill(0).map((_, index) => (
+                  <li key={index}>
+                    <div className="author_list_pp">
+                      <Skeleton
+                        height={"50px"}
+                        width={"50px"}
+                        borderRadius={"50%"}
+                      />
+                    </div>
+                    <div className="author_list_info">
+                      <Skeleton height={"20px"} width={"105px"} />
+                      <span>
+                        <Skeleton height={"20px"} width={"50px"} />
+                      </span>
+                    </div>
+                  </li>
                 ))
               )}
             </ol>
