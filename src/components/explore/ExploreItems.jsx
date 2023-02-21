@@ -112,7 +112,6 @@ const ExploreItems = () => {
           </div>
         ))
       )}
-
           {loadMores !== 16 && (
         <div className="col-md-12 text-center">
           <Link

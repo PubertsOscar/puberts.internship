@@ -6,7 +6,6 @@ const AuthorItems = ({ author }) => {
   return (
     <div className="de_tab_content">
       <div className="tab-1">
-
         <div className="row">
           {author.nftCollection
           ?
